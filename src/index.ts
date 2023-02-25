@@ -1,3 +1,5 @@
+import server from "./mockServer";
+
 export enum Method {
  GET = 'GET',
  POST = 'POST',
@@ -62,3 +64,6 @@ export interface MockConfig{
 export function defineConfig(mock: MockConfig) {
  return mock;
 }
+
+export const mockServer = server;
+

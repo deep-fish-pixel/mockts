@@ -65,5 +65,6 @@ export function defineConfig(mock: MockConfig) {
  return mock;
 }
 
+console.log(1122334455667788)
 export const mockServer = server;
 

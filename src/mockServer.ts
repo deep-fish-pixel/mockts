@@ -8,12 +8,14 @@ export default function mockServer(options: { prefix?: string | string[]; rootPa
         rootPath: './mock',
         ...options,
     };
-    const prefixes = typeof _options.prefix === 'string' ? [_options.prefix] : _options.prefix;
+    const prefixes = typeof _options.prefix === 'string' ?
+        [_options.prefix] :
+        _options.prefix;
 
     return function (request: Request, response: Response, next: NextFunction) {
         prefixes.some(prefix => {
             if (request.path.indexOf(prefix) === 0) {
-                console.log('prefix====================')
+                console.log('prefix====================12345789')
                 /*try {
                     if (validate(request, response)) {
 
@@ -21,6 +23,7 @@ export default function mockServer(options: { prefix?: string | string[]; rootPa
                 } catch (e) {
                     response.status(404).send(e.message);
                 }*/
+                next();
             } else {
                 next();
             }
@@ -28,3 +31,5 @@ export default function mockServer(options: { prefix?: string | string[]; rootPa
 
     };
 }
+
+console.log(2222)

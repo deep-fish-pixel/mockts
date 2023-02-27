@@ -1,16 +1,10 @@
 import pkg from "./package.json";
 import typescript from "rollup-plugin-typescript";
 import sourceMaps from "rollup-plugin-sourcemaps";
+import serve from 'rollup-plugin-serve'
 
 export default {
   input: "./src/main.ts",
-  plugins: [
-    typescript({
-      exclude: "node_modules/**",
-      typescript: require("typescript")
-    }),
-    sourceMaps()
-  ],
   output: [
     {
       format: "cjs",
@@ -22,5 +16,16 @@ export default {
       file: pkg.module,
       sourcemap: true
     }
-  ]
+  ],
+  plugins: [
+    typescript({
+      exclude: "node_modules/**",
+      typescript: require("typescript")
+    }),
+    sourceMaps(),
+    serve('dist')
+  ],
+  server: {
+
+  }
 };

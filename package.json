@@ -19,9 +19,8 @@
     "typescript": "^4.9.5"
   },
   "scripts": {
-    "start": "npm run build && node build/index.js",
-    "start:dev": "nodemon",
-    "build": "rollup -c",
+    "start": "npm run build && node server.js",
+    "build": "rollup -w -c",
     "build:type": "tsc -p ./tsconfig.type.json",
     "build2": "rollup --config",
     "test": "jest --no-cache"

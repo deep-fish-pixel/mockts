@@ -1,5 +1,5 @@
 import express from 'express';
-import { mockServer } from '../src';
+import { mockServer } from '../src/main';
 import { request } from "./helper/client";
 
 const app = express();

@@ -9,7 +9,7 @@ export enum Method {
 }
 
 interface Header{
- [key: string]: string | boolean| RegExp | Header;
+ [key: string]: string | boolean| RegExp | Header | undefined;
  required?: boolean;
  regExp?: RegExp;
 }

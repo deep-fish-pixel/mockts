@@ -1,4 +1,4 @@
-import {defineConfig, Method} from '@/index';
+import {defineConfig, Method} from '../../src/main';
 
 export default defineConfig({
     path: '',
